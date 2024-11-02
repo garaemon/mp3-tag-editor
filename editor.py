@@ -10,6 +10,18 @@ import streamlit as st
 
 def show_ui(files: List[Path]):
     st.header('MP3 Tag Editor')
+    with st.form('Utility Script'):
+        auto_track = st.form_submit_button('Set track # automatically')
+        if auto_track:
+            bar = st.progress(0.0, text='Updating tags')
+            for i, f in enumerate(files):
+                audio = eyed3.load(f.as_posix())
+                # Add +1 to start the index from 1
+                audio.tag.track_num = i + 1
+                audio.tag.save()
+                bar.progress((i + 1) / len(files),
+                             text=f'Updating tags {i + 1} out of {len(files)}')
+
     for f in files:
         audio = eyed3.load(f.as_posix())
         if not audio.tag:
