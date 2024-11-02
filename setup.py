@@ -26,6 +26,7 @@ REQUIRED = [
     # The latest version of pyarrow that supports python 3.8 is 17.0.0
     'pyarrow==17.0.0',
     'pandas==2.0.3',
+    'numpy==1.24.4'
     # 'requests', 'maya', 'records',
 ]
 
