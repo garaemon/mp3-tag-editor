@@ -22,7 +22,11 @@ VERSION = '0.0.0'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
-    'streamlit', 'eyed3'
+    'streamlit', 'eyed3', 'Cython',
+    # The latest version of pyarrow that supports python 3.8 is 17.0.0
+    'pyarrow==17.0.0',
+    'pandas==2.0.3',
+    'numpy==1.24.4'
     # 'requests', 'maya', 'records',
 ]
 
