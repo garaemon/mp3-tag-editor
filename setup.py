@@ -24,7 +24,7 @@ VERSION = '0.0.0'
 REQUIRED = [
     'streamlit', 'eyed3', 'Cython',
     # The latest version of pyarrow that supports python 3.8 is 17.0.0
-    'pyarrow=17.0.0'
+    'pyarrow==17.0.0'
     # 'requests', 'maya', 'records',
 ]
 
