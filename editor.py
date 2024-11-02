@@ -19,7 +19,8 @@ def show_ui(files: List[Path]):
                 # Add +1 to start the index from 1
                 audio.tag.track_num = i + 1
                 audio.tag.save()
-                bar.progress((i + 1) / len(files), text='Updating tags')
+                bar.progress((i + 1) / len(files),
+                             text=f'Updating tags {i + 1} out of {len(files)}')
 
     for f in files:
         audio = eyed3.load(f.as_posix())
