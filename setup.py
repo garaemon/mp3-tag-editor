@@ -22,7 +22,7 @@ VERSION = '0.0.0'
 
 # What packages are required for this module to be executed?
 REQUIRED = [
-    'streamlit', 'eyed3', 'cython'
+    'streamlit', 'eyed3', 'Cython'
     # 'requests', 'maya', 'records',
 ]
 
