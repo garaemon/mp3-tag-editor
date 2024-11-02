@@ -13,12 +13,13 @@ def show_ui(files: List[Path]):
     with st.form('Utility Script'):
         auto_track = st.form_submit_button('Set track # automatically')
         if auto_track:
+            bar = st.progress(0.0, text='Updating tags')
             for i, f in enumerate(files):
                 audio = eyed3.load(f.as_posix())
                 # Add +1 to start the index from 1
                 audio.tag.track_num = i + 1
                 audio.tag.save()
-                st.success(f'Successfully update {f.name}')
+                bar.progress((i + 1) / len(files), text='Updating tags')
 
     for f in files:
         audio = eyed3.load(f.as_posix())
