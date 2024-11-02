@@ -15,7 +15,8 @@ def show_ui(files: List[Path]):
         if auto_track:
             for i, f in enumerate(files):
                 audio = eyed3.load(f.as_posix())
-                audio.tag.track_num = i
+                # Add +1 to start the index from 1
+                audio.tag.track_num = i + 1
                 audio.tag.save()
                 st.success(f'Successfully update {f.name}')
 
