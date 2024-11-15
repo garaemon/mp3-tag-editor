@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+"""Simple web user interface to edit mp3 tag"""
+
+
 from argparse import ArgumentParser
 from pathlib import Path
 from typing import List
